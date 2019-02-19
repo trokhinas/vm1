@@ -3,12 +3,20 @@ package Matrix;
 import java.util.Arrays;
 
 public abstract class SimpleMatrixRow {
-    private int size;
-    private double[] elements;
+    protected int size;
+    protected double[] elements;
 
     public SimpleMatrixRow(int size) {
         this.size = size;
         elements = new double[size];
+    }
+
+    public double[] getElements() {
+        return elements;
+    }
+
+    public int getSize() {
+        return size;
     }
 
     public SimpleMatrixRow(double[] array) {
@@ -33,12 +41,10 @@ public abstract class SimpleMatrixRow {
         }
     }
 
-    /**
-     * @param index - порядковый номер элемента, начиная с 1
-     * @return элемент соответствующий этому номеру или же исключение, если номер за рамками.
-     */
+
+
     public double get(int index) {
-        return elements[index - 1];
+        return elements[index];
     }
 
     public void swap(SimpleMatrixRow row) {
